@@ -107,3 +107,9 @@ Finalizado o processo de tratamento dos dados, iremos exportar os dados para um 
 ````
 df.to_excel('celulares_subtraidos_consolidado.xlsx')
 ````
+
+
+
+
+## Power BI
+Após a es
