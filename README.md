@@ -112,4 +112,4 @@ df.to_excel('celulares_subtraidos_consolidado.xlsx')
 
 
 ## Power BI
-Após a es
+Após a extração da planilha, iremos subir o aquivo no Power BI para ser tratado no Power Query
