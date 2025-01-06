@@ -33,7 +33,7 @@ celulares_subtraidos1 = pd.read_excel('celularessubtraidos_2024_1_6_(1).xlsb')
 celulares_subtraidos1.info()
 ````
 
-![alt text](image1.png)
+![alt text](images/image1.png)
 
 Fiz o mesmo processo com a segunda planilha
 
@@ -45,17 +45,17 @@ celulares_subtraidos2 = pd.read_excel('celularessubtraidos_2024_7_9_(1).xlsb')
 celulares_subtraidos2.info()
 ````
 
-![alt text](image2.png)
+![alt text](images/image2.png)
 
 Após o processo de importação das planilhas, realizei a união das duas planilhas, pois, as duas possuem a mesma estrutura de dados (mesma quantidade de colunas com o mesmo nome).
 
 ````
 df = pd.concat([celulares_subtraidos1, celulares_subtraidos2])
-`````
+````
 
 Agora temos um DataFrame com o nome de *df* que possui os dados das duas planilhas juntas.
 
-![alt text](image3.png)
+![alt text](images/image3.png)
 
 Algumas colunas apresentam valores nulos com tipo *object*. Para esses casos, irei utilizar a função *unique()* para poder visualizar os valores distintos em determinadas colunas.
 
