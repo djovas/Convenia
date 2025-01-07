@@ -112,4 +112,58 @@ df.to_excel('celulares_subtraidos_consolidado.xlsx')
 
 
 ## Power BI
-Após a extração da planilha, iremos subir o aquivo no Power BI para ser tratado no Power Query
+Após a extração da planilha, iremos subir o aquivo no Power BI para ser tratado no Power Query.
+
+Iremos chamar essa base de *Base de Dados*.
+
+Primeiramente, ocorre o processo padrão utilizar a primeira linha como cabeçalho da coluna e também iremos identificar o tipo da coluna de forma automática:
+
+![alt text](images/image6.png)
+
+Após esse processo, iremos retirar as duplicatas da base de dados.
+
+As duplicatas, conforme informado dentro da planilha que explica sobre a base de dados, devem ser removidas utilizando 3 colunas:
+
+>- NOME_DELEGACIA
+>- ANO_BO
+>- NUM_BO
+
+<br>
+
+![alt text](images/image7.png)
+
+A coluna HORA_OCORRENCIA possui um caso específico. Algumas linhas, após a identificação da hora exata preenchida, possui um campo *.0000000* após a hora, que ocorre um erro quando a coluna é convertida para hora.
+
+Para solucionar esse caso, iremos dividir a coluna utilizando o delimitador ponto *"."* para separarmos esses valores.
+
+![alt text](images/image8.png)
+
+Por padrão, o Power Query transformou essas colunas para o tipo texto. Basta retomar a primeira coluna que contém a hora para o formato de *tempo*, renomear a coluna de volta para HORA_OCORRENCIA e apagar a segunda coluna criada.
+
+![alt text](images/image9.png)
+
+Para finalizarmos, iremos remover as seguintes colunas que não irão fazer parte da nossa análise. Alguns campos serão removidos por motivos de não fazerem sentido para o nosso tipo de análise, outros porque o campo possui somente 1 valor preenchido:
+
+>- Column1 
+>- MES
+>- ANO
+>- LONGITUDE
+>- LATITUDE
+>- CEP
+>- LOGRADOURO_VERSAO
+>- LOGRADOURO
+>- NUMERO_LOGRADOURO
+>- CONT_OBJETO
+>- DESCR_MODO_OBJETO
+>- DESCR_TIPO_OBJETO
+>- DESCR_SUBTIPO_OBJETO
+>- DESCR_UNIDADE
+>- HORA_OCORRENCIA.2
+>- VERSAO
+>- DATAHORA_REGISTRO_BO
+>- DATA_COMUNICACAO_BO
+>- DATAHORA_IMPRESSAO_BO
+>- FLAG_STATUS
+
+<br>
+Finalizando esse processo de tratamento dos dados, seguiremos com a explicação dos painéis.
