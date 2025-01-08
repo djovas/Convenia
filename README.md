@@ -142,7 +142,7 @@ Por padrão, o Power Query transformou essas colunas para o tipo texto. Basta re
 
 ![alt text](images/image9.png)
 
-Para finalizarmos, iremos remover as seguintes colunas que não irão fazer parte da nossa análise. Alguns campos serão removidos por motivos de não fazerem sentido para o nosso tipo de análise, outros porque o campo possui somente 1 valor preenchido:
+No próximo passo, iremos remover as seguintes colunas que não irão fazer parte da nossa análise. Alguns campos serão removidos por motivos de não fazerem sentido para o nosso tipo de análise, outros porque o campo possui somente 1 valor preenchido:
 
 >- Column1 
 >- MES
@@ -166,4 +166,69 @@ Para finalizarmos, iremos remover as seguintes colunas que não irão fazer part
 >- FLAG_STATUS
 
 <br>
+
+Ao analisarmos mais a fundo os dados, podemos perceber que as colunas HORA_OCORRENCIA e DESCR_PERIODO possuem algumas divergências. A coluna DESCR_PERIODO quando está marcada como "Não Informado", a coluna HORA_OCORRENCIA está preenchida com o horário do registro do BO, enquanto quando a coluna de hora está em branco, a coluna de descrição do período está preenchido.
+
+Para ajustar esses dados, iremos criar uma coluna condicional com o nome de *Periodo da Ocorrencia", no qual iremos criar uma condicional a partir da coluna das horas para ficar de acordo com a coluna DESCR_PERIODO.
+
+````
+if Time.From([HORA_OCORRENCIA]) = null then [DESCR_PERIODO]
+else if Time.From([HORA_OCORRENCIA]) < #time(6,0,0) then "De madrugada"
+else if Time.From([HORA_OCORRENCIA]) < #time(12,0,0) then "Pela manhã"
+else if Time.From([HORA_OCORRENCIA]) < #time(18,0,0) then "A tarde"
+else if Time.From([HORA_OCORRENCIA]) < #time(23,59,59) then "A noite"
+else [DESCR_PERIODO]
+````
+
+Basicamente, o código acima irá verificar se a coluna do horário não está preenchido. Se caso não estiver, ele irá preencher de acordo com a coluna do periodo, mas se caso tiver preenchido, iremos tratar da seguinte forma:
+
+>- 00:00 -> 05:59 = "De madrugada"
+>- 06:00 -> 11:59 = "Pela manhã"
+>- 12:00 -> 17:59 = "A tarde"
+>- 18:00 -> 23:59 = "A noite"
+
+Dessa forma, conseguiremos fazer uma análise dos períodos.
+
+Posteriormente, criei a coluna condicional "Ordem do Periodo da Ocorrência" que iremos utilizar para ordenar os períodos nos gráficos dentro do Power BI.
+
+As colunas ficaram com o tipo de Texto e Número Inteiro, respectivamente.
+
+![alt text](images/image10.png)
+
+Posteriormente, iremos tratar as seguintes colunas para termos os valores de acordo com a documentação oficial:
+
+>- AUTORIA_BO - D para Desconhecida e C para Conhecida
+>- FLAG_INTOLERANCIA - N para Não e S para Sim
+>- FLAG_FLAGRANTE - N para Não e S para Sim
+>- FLAG_ATO_INFRACIONAL - N para Não e S para Sim
+
+<br>
+
+![alt text](images/image11.png)
+
+Após essas mudanças, iremos alterar dois valores na coluna QUANTIDADE_OBJETO. Temos dois valores que provavelmente foram inseridos de forma errada pois fogem completamente do restante dos números.
+
+Os números são o 1111111 e o 1351989, que iremos alterar para quantidade 1 para podermos aproveitar o BO registrado.
+
+A última alteração que iremos realizar, será o nome S. PAULO para SÃO PAULO na coluna CIDADE, pois dessa forma fica mais fácil a leitura e mais fácil de filtrar a cidade a depender da análise.
+
+Para finalizarmos, iremos criar mais dois campos personalizados, chamados de Dia da Semana e Dia da Semana - Ordem.
+
+Dia da semana será para podermos validar qual dia da semana que o BO foi registrado e a ordem será para podermos ordenar de acordo com o dia da semana, iniciando no domingo.
+
+````
+Date.DayOfWeekName([DATA_OCORRENCIA_BO], "pt-BR")
+````
+````
+Date.DayOfWeek([DATA_OCORRENCIA_BO], Day.Sunday)
+````
+
+<br>
 Finalizando esse processo de tratamento dos dados, seguiremos com a explicação dos painéis.
+
+
+taxa de furtos é 69% no período da tarde e noite
+
+taxa de furtos em lojas são maiores durante o dia e madrugada
+
+fazer qual são os maiores BOs
