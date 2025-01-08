@@ -258,3 +258,46 @@ Conseguimos ver um rankeamento das marcas que foram mais furtadas. Podemos ver q
 O segundo gráfico podemos ver o tipo de local onde ocorreram mais furtos. Há também uma comparação com a quantidade de dispositivos roubados relacionados a cada localização. na vias públicas ou lugares públicos, podemos ver que temos quase a média de 1 pra 1 em relação a dispositivos roubados com a quantidade de BOs. Exceto lugares com comércio, como lojas e shoppings, onde a o número de dispositivos sobe um pouco mais em relação aos outros, que se dá por conta de roubo em alta quantidade de dispositivos.
 
 Podemos ver também os furtos por períodos do dia. Cerca de 60% dos furtos são realizados na parte da tarde ou noite, onde se tem uma grande concentração de pessoas nas ruas, seja para fins pessoais em visitar algum local, ou seja para retornar do trabalho.
+
+![alt text](images/image14.png)
+
+Nesse painel, mostra os BOs registrados no qual a quantidade de celulares furtados é 30 ou mais.
+
+Podemos constatar que os furtos em grandes quantidades foram realizados em estabelecimentos comerciais. E esses furtos foram realizados em grande parte na madrugada e na parte da manhã, muito devido ao horário em que o BO foi registrado.
+
+Na listagem na parte inferior, podemos verificar melhor sobre esses BOs, como onde foi realizado, quantidade e qual a marca de telefone que foi mais roubada.
+
+![alt text](images/image15.png)
+
+Nesse painel, conseguimos visualizar em qual dia da semana os roubos acontecem em grande quantidade.
+
+Podemos constatar que os roubos são registrados em maior parte no final de semana, entre sexta-feira e domingo.
+
+Esse número elevado se dá por conta do grande número de pessoas que saem aos finais de semana por motivos de lazer.
+
+![alt text](images/image16.png)
+
+Neste último painel, podemos analisar mais alguns pequenos detalhes sobre os BOs.
+
+Dos BOs registrados, 97% são registrados pela parte interessada, ou seja, a pessoa que foi roubada. Os demais foram divididas entre outras corporações.
+
+Desses BOs, somente 10 tivemos casos de intolerância.
+
+Os painéis de Flagrante e Menor Infrator, podemos concluir que a esmagadora minoria dos BOs tiveram o flagrante, e menos BOs ainda foram registrados por crimes comentido por menores de idade.
+
+De todos os BOs registrados, quase 70% tiveram seu IMEI bloqueado, ou seja, grande parte desses celulares roubados serão inutilizados por quem realizou o roubo.
+
+<br>
+
+# Conclusão
+Aqui cheamos ao final do desafio proposto pela Convenia.
+
+
+<br><br>
+
+## 🚀 Sobre mim
+Meu nome é Giovani Duarte, tenho 30 anos, sou Analista de Dados e sou de Belo Horizonte/MG. 
+
+## 🔗 Links
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/djovas)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/giovani-duarte-de-souza/)
