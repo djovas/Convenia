@@ -224,11 +224,37 @@ Date.DayOfWeek([DATA_OCORRENCIA_BO], Day.Sunday)
 ````
 
 <br>
-Finalizando esse processo de tratamento dos dados, seguiremos com a explicação dos painéis.
 
 
-taxa de furtos é 69% no período da tarde e noite
+# Insights
 
-taxa de furtos em lojas são maiores durante o dia e madrugada
+Agora iremos mostrar alguns insights que podemos obter com os painéis criados.
 
-fazer qual são os maiores BOs
+*Obs: Iremos utilizar o período do dia 01/01/2024 ao dia 30/09/2024, período onde tivemos maior volume de registros.*
+
+O primeiro painel abaixo, ficou da seguinte forma:
+
+![alt text](images/image12.png)
+
+Nesse painel, podemos visualizar a quantidade de BOs que tivemos registrados no determinado período, juntamente com a quantidade de Dispositivos Furtados.
+
+Podemos ver que a cidade de São Paulo é a cidade com mais BOs registrados. Cerca de 56% do registros que possuímos na nossa base de dados.
+
+A direita, conseguimos ver visualizar os bairros onde temos mais BOs registrados e/ou dispositivos roubados. O bairros onde se encontram com mais BOs registrados, são os bairros onde temos um alto número de concentração de pessoas e possivelmente turistas, pois possuímos pontos de passeio e pontos turísticos nessa região.
+
+O último gráfico apresenta uma envolução dos registros de BOs e dispositivos furtados. No mês de março tivemos uma quebra brusca do padrão dos dados. Esse fato pode se dar realmente por pouco roubo de dispositivo, ou por perca dos dados na hora da extração da informação.
+
+Podemos visualizar que de Janeiro até Abril tivemos uma cresce no númerpo de BOs registrados, que se manteve um pouco no padrão até o mês de Junho, no qual começou a ter uma leve queda até o mês de Setembro.
+
+Hoje existem fontes na internet que informam que o índice de criminalidade em São Paulo caiu bastante em 2024 ao decorrer do ano, e também se comparado a anos anteriores.
+
+___
+![alt text](images/image13.png)
+
+Nesse painel, podemos ter mais detalhes sobre os BOs.
+
+Conseguimos ver um rankeamento das marcas que foram mais furtadas. Podemos ver que as 3 primeiras são as marcas que são mais vendidas hoje no mercado brasileiro, cerca de 82% dos furtos.
+
+O segundo gráfico podemos ver o tipo de local onde ocorreram mais furtos. Há também uma comparação com a quantidade de dispositivos roubados relacionados a cada localização. na vias públicas ou lugares públicos, podemos ver que temos quase a média de 1 pra 1 em relação a dispositivos roubados com a quantidade de BOs. Exceto lugares com comércio, como lojas e shoppings, onde a o número de dispositivos sobe um pouco mais em relação aos outros, que se dá por conta de roubo em alta quantidade de dispositivos.
+
+Podemos ver também os furtos por períodos do dia. Cerca de 60% dos furtos são realizados na parte da tarde ou noite, onde se tem uma grande concentração de pessoas nas ruas, seja para fins pessoais em visitar algum local, ou seja para retornar do trabalho.
